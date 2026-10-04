@@ -1,0 +1,14 @@
+name: "02 - understating events"
+on:
+    workflow_dispatch:
+    push:
+    pull_request:
+    schedule:
+     - cron: "*/7 * * * *"
+
+jobs:
+    event-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print my event name
+              run: echo "Event that Trigger workflow is ${{ github.event_name }} Event"
